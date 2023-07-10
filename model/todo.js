@@ -1,5 +1,5 @@
 class Todo {
-    constructor(title, isCompleted = false, creationDate = new Date()) {
+    constructor(title, creationDate = new Date(), isCompleted = false) {
 
 
         this.title = title;

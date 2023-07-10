@@ -1,13 +1,67 @@
+body{
+
+    background-color: rgb(59, 58, 58);
+    
+}
+
+h1{
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    font-size: 100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.todos-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+   
+}
+
 .todo-card{
 
-    border: 1px solid crimson;
+    border: 5px solid rgb(255, 255, 255);
     display: flex;
-    flex-direction: column;
-    padding: 4px;
-    margin: 4px;
+   padding: 40px;
+    gap: 30px;
+    
+    text-align: left;
+    text-transform: capitalize;
+   width: 20%;
+   flex-wrap: wrap;
+   margin-bottom: 40px;
+    
+}
+
+.todo-card span{
+
+    font-size: 16px;
+    color: white;
+   
+}
+
+
+button {
+
+    width: 100px;
+    
 }
 
 .todo-completed{
 
     border: 1px solid lime;
+}
+
+.srtBtn {
+
+    width: 40%;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-left: 74px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(251, 158, 52);
+    font-size: 24px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }

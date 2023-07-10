@@ -4,6 +4,8 @@ const todos = DataService.getData();
 
 const manager = new Manager(todos);
 
+// const storage = new Storage(todos)
+
 
 
 function render() {
@@ -15,7 +17,7 @@ function render() {
 
     for (let i = 0; i < manager.todoArray.length; i++) {
         const todo = manager.todoArray[i];
-        
+
 
         const div = document.createElement('div')
         const titleStrong = document.createElement('strong')
@@ -25,9 +27,8 @@ function render() {
 
         if (todo.isCompleted) {
 
-            // div.classList.add('todo-completed')
-            div.style.borderColor = 'lime'
-
+            div.classList.add('todo-completed')
+           
         }
 
         titleStrong.appendChild(titleNode)
@@ -45,9 +46,9 @@ function render() {
 
         )
 
-       
 
-       
+
+
 
 
         completeBtn.appendChild(completeNode)
@@ -90,19 +91,16 @@ function render() {
 render()
 
 
-function addTodoWithTitle(){
+function addTodoWithTitle() {
 
     const input = document.getElementById("eventIn")
 
     const title = input.value;
-    const newTodo = new Todo()
-    
+    const newTodo = new Todo(title)
+    manager.addToDo(newTodo)
 
-    if (title) {
 
-        manager.addToDo(newTodo)
-    
-    } render()
+    render()
 
 
 }
