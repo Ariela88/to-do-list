@@ -159,6 +159,8 @@ margin-bottom: 10px;}
     align-items: flex-start;
     gap: 10px;
 }
+ 
+
 
 .add-input{
 
@@ -169,6 +171,13 @@ margin-bottom: 10px;}
     padding: 10px;
     font-size: 16px;
 }
+@media (max-width:768px){
+    .add-input{
+        width: 100%;
+        font-size: 12px;
+    }
+}
+
 
 
 .addBtn{
