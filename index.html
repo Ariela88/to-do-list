@@ -8,20 +8,22 @@
 </head>
 <body>
     <header>
-        <h1> To Do List </h1>
+        <h1> To Do List: </h1>
     </header>
     <main>
-        <div> 
-            <button class="srtBtn" onclick="orderByTitle()"> Ordina per Nome </button>
-            <button class="srtBtn"onclick="orderByDate()"> Ordina per Data </button>
+        <div class="sort-container"> 
+            <h2> Ordina per:</h2>
+            <button class="srtBtn" onclick="orderByTitle()"> Nome </button>
+            <button class="srtBtn"onclick="orderByDate()"> Data </button>
         </div>
         <div id="todo-container"class="todos-container">
 
         </div>
 
-
-    <input id="eventIn" type="text" placeholder="scrivi qui l'evento da aggiungere...." size="500">
-    <button onclick="addTodoWithTitle()"> Aggiungi alla lista </button>
+<div class="input-container"> 
+    <input id="eventIn" class="add-input" type="text" placeholder="scrivi qui l'evento da aggiungere....">
+    <button class="addBtn" onclick="addTodoWithTitle()"> Add to List </button>
+  </div>  
     </main>
     
 </body>

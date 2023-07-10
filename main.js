@@ -36,7 +36,7 @@ function render() {
 
         const completeBtn = document.createElement('button');
 
-        const completeNode = document.createTextNode(todo.isCompleted ? 'completato' : 'da completare')
+        const completeNode = document.createTextNode(todo.isCompleted ? '✘' : '✔')
 
         completeBtn.addEventListener('click', () => {
             todo.isCompleted = !todo.isCompleted;
@@ -53,6 +53,7 @@ function render() {
 
         completeBtn.appendChild(completeNode)
         div.appendChild(completeBtn)
+        completeBtn.classList.add('completBtn')
         // completeBtn.addEventListener('mouseover', () => div.style.borderWidth = '3px')
         // completeBtn.addEventListener('mouseleave', () => div.style.borderWidth = '1px')
 
@@ -64,6 +65,7 @@ function render() {
         deleteBtn.appendChild(deleteNode);
 
         div.appendChild(deleteBtn);
+        deleteBtn.classList.add('dltBtn')
 
 
         deleteBtn.addEventListener("click", () => {
