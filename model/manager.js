@@ -1,12 +1,12 @@
-class Manager{
+class Manager {
 
-    constructor(todoArray = []){
+    constructor(todoArray = []) {
 
         this.todoArray = todoArray;
 
     }
 
-    addToDo(todo){
+    addToDo(todo) {
 
         this.todoArray.push(todo)
 
@@ -15,15 +15,40 @@ class Manager{
 
 
 
-    ordertoDosByName(){
+    orderoDosByTitle() {
 
-        this.todoArray.sort((todo1,todo2)=> todo1.title.localeCompare(todo2))
-        
-
-        
-    }
-    ordertoDosByDate(){
+        this.todoArray.sort((todo1, todo2) => todo1.compareByTitle(todo2))
 
 
     }
+
+
+
+
+    ordertodosByDate() {
+        
+
+        this.todoArray.sort((todo1, todo2) => todo1.compareByDate(todo2))
+
+
+    }
+
+
+
+deleteTodo(index){
+
+    this.todoArray.splice(index,1);
+
+}
+
+
+
+
+
+
+
+
+
+
+
 }
