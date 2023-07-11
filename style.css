@@ -13,6 +13,17 @@ body{
     
 }
 
+main{
+    width: 100%;
+}
+
+@media (max-width:768px) {
+
+    main{
+        width: 85%;
+    }
+}
+
 h1{
     text-align: center;
     width: 40%;
@@ -76,14 +87,14 @@ h2{
     background-color: rgba(82, 82, 82, 0.783);
     font-size: 28px;
    padding: 40px;
-    gap: 30px;
+    gap: 50px;
     font-family: 'Quicksand', sans-serif;
     align-items: flex-end;
     text-align: left;
     text-transform: capitalize;
-   width: 100%;
+   width:94%;
    flex-wrap: wrap;
-   margin-bottom: 40px;
+   margin-bottom: 20px;
     
 }
 
@@ -121,10 +132,19 @@ margin-bottom: 10px;}
 .todo-card strong{
     order:2;
     color: rgb(0, 0, 0);
+    width: 500px;
 }
 
 .dltBtn{
-    order:4
+    order:4;
+    
+    margin-top: 70px;
+    margin-left: 30px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.34);
+    font-size: 18px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 
@@ -140,7 +160,7 @@ margin-bottom: 10px;}
    
     margin-bottom: 50px;    
     margin-top: 70px;
-    margin-left: 40px;
+    margin-left: 30px;
     border-radius: 20px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.34);
@@ -158,6 +178,7 @@ margin-bottom: 10px;}
     display: flex;
     align-items: flex-start;
     gap: 10px;
+    justify-content: center;
 }
  
 
@@ -170,6 +191,7 @@ margin-bottom: 10px;}
     border: 5px solid black;
     padding: 10px;
     font-size: 16px;
+    
 }
 @media (max-width:768px){
     .add-input{
