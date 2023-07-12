@@ -1,11 +1,18 @@
-// console.log(DataService.getData())
+// const todos = Storage.loadTodos()
+// console.log(todos)
+// let manager;
+// if (todos) {
+//     manager = new Manager(todos)
 
-const todos = DataService.getData();
+// } else {
+//     manager = new Manager()
+// }
 
-const manager = new Manager(todos);
+// const manager = new Manager(todos);
 
 // const storage = new Storage(todos)
 
+let manager = new Manager()
 
 
 function render() {
@@ -28,7 +35,7 @@ function render() {
         if (todo.isCompleted) {
 
             div.classList.add('todo-completed')
-           
+
         }
 
         titleStrong.appendChild(titleNode)
@@ -39,7 +46,7 @@ function render() {
         const completeNode = document.createTextNode(todo.isCompleted ? '✘' : '✔')
 
         completeBtn.addEventListener('click', () => {
-            todo.isCompleted = !todo.isCompleted;
+            manager.changeCompleteStatus(i)
             render()
 
         }
@@ -70,6 +77,7 @@ function render() {
 
         deleteBtn.addEventListener("click", () => {
             manager.deleteTodo(i);
+            Storage.saveData(manager.todoArray)
             render();
         });
 
@@ -98,9 +106,15 @@ function addTodoWithTitle() {
     const input = document.getElementById("eventIn")
 
     const title = input.value;
-    const newTodo = new Todo(title)
-    manager.addToDo(newTodo)
 
+    if (title.trim() !== '') {
+
+
+        manager.addTodoWithTitle(title)
+       
+        input.value = ''
+
+    }
 
     render()
 

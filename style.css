@@ -1,143 +1,186 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Oswald:wght@300&family=Quicksand:wght@400;600;700&family=Rubik:wght@300;400;800;900&display=swap');
 
 
 
-body{
+body {
 
-    background-color: rgb(59, 58, 58);
+    background-color: rgb(255, 255, 255);
     background-image: url(./assets/checkpattern.jpg);
     background-repeat: repeat;
-    
-    
-    
+
+
+
 }
 
-main{
+main {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    
 }
+@media (max-width:768px){
 
-@media (max-width:768px) {
+    main{width: auto;
 
-    main{
-        width: 85%;
+
     }
 }
 
-h1{
+.spacer{
+    flex-grow: 1;
+    
+}
+
+
+h1 {
     text-align: center;
-    width: 40%;
+background-color: #ffee7da9;
     margin: auto;
-    font-size: 120px;
+    font-size: 140px;
     font-family: 'Fasthand', cursive;
     text-shadow: -2px 0 #ffffff, 0 2px #ffffff, 2px 0 #ffffff, 0 -2px #ffffff;
 }
 
 @media (max-width:768px) {
 
-    h1{font-size: 70px;
+    h1 {
+        font-size: 70px;
         width: 100%;
-    
+
     }
 }
 
-h2{
-    font-size: 60px;
+h2 {
+    font-size: 80px;
     font-family: 'Fasthand', cursive;
-    margin-bottom: 30px;
-   
-    
+    margin: 0px;
+    text-shadow: -2px 0 #ffffff, 0 2px #ffffff, 2px 0 #ffffff, 0 -2px #ffffff;
+
+
 }
-@media (max-width:768px){
-    h2{
-        font-size: 30px;
-    margin:0px}
+
+@media (max-width:768px) {
+    h2 {
+        font-size: 32px;
+        margin: 0px;
+        text-shadow: none;
+    }
 }
 
 
-.sort-container{
+.sort-container {
     display: flex;
+    background-color: rgba(82, 82, 82, 0.852);
     justify-content: center;
-    align-content: center;
-    background-color: rgba(82, 82, 82, 0.783);
+    gap: 50px;
+
+    /* background-color: rgba(82, 82, 82, 0.783); */
     border-bottom: 6px solid white;
-    
+    width: 100%;
+    height: 20%;
+
+
 }
-@media (max-width:768px){
-    .sort-container{
+
+@media (max-width:768px) {
+    .sort-container {
         gap: 10px;
-        }
+    }
 }
 
 
 
 
-.todos-container{
+.todos-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     gap: 20px;
-   
+
 }
 
-.todo-card{
+.todo-card {
 
     border-bottom: 5px solid rgb(0, 0, 0);
     display: flex;
-    background-color: rgba(82, 82, 82, 0.783);
+    background-color: rgba(82, 82, 82, 0.852);
     font-size: 28px;
-   padding: 40px;
+    padding-bottom: 30px;
+
     gap: 50px;
     font-family: 'Quicksand', sans-serif;
     align-items: flex-end;
     text-align: left;
     text-transform: capitalize;
-   width:94%;
-   flex-wrap: wrap;
-   margin-bottom: 20px;
-    
+    width: 100vw;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: space-around;
+
+
 }
 
-@media (max-width:768px){
-    .todo-card{
-        width: 100%;
-    font-size: 20px;
-gap: 10px;
-padding: 30px;
-margin-bottom: 10px;}
+@media (max-width:768px) {
+    .todo-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        font-size: 20px;
+        gap: 0;
+        width: auto;
+      
+
+        /* padding: 30px;
+        margin-bottom: 10px; */
+    }
 }
 
-.todo-card span{
+.todo-card span {
 
     font-size: 20px;
     color: rgb(0, 0, 0);
     font-weight: bold;
     order: 3;
-   
-}
-@media (max-width:768px){
-    .todo-card span{
-        width: 100%;
-    font-size: 16px;
-}
+
 }
 
-.completeBtn{
+
+
+.completeBtn {
     order: 1;
     border: 6px solid rgb(0, 0, 0);
     background-color: transparent;
-    width: 50px;
+    /* width: 50px; */
 }
 
-.todo-card strong{
-    order:2;
+@media (max-width:768px) {
+    .todo-card button {
+
+        width: 70px;
+        margin: 10px;
+        font-size:x-small;
+    }
+}
+
+.todo-card strong {
+    order: 2;
     color: rgb(0, 0, 0);
-    width: 500px;
+
 }
 
-.dltBtn{
-    order:4;
+@media (max-width:768px){
+    .todo-card strong {
+        order: 2;
+        color: rgb(0, 0, 0);
+        margin: 0px;
+        text-align: left;
     
+    }
+}
+
+.dltBtn {
+    order: 4;
+
     margin-top: 70px;
     margin-left: 30px;
     border-radius: 20px;
@@ -149,41 +192,51 @@ margin-bottom: 10px;}
 
 
 
-.todo-completed{
+.todo-completed {
 
     border: 6px solid lime;
 }
 
 .srtBtn {
 
-   width: 80px;
-   
-    margin-bottom: 50px;    
-    margin-top: 70px;
-    margin-left: 30px;
+    /* width: 50px; */
+    /* margin-bottom: 78px;
+    margin-top: 70px; */
+    width: 200px;
+    border: 5px solid black;
     border-radius: 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.34);
-    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    font-size: 32px;
     font-family: 'Quicksand', sans-serif;
+    /* padding-right: 194px;
+    padding-left: 61px; */
+    height: max-content;
+    align-self: center;
+
+
+
 }
 
-@media (max-width:768px){
-    .srtBtn{
-        
-    margin:4px}
+@media (max-width:768px) {
+    .srtBtn {
+        width: 80px;
+        font-size: 16px;
+        margin: 4px;
+
+    }
 }
 
-.input-container{
+.input-container {
     display: flex;
     align-items: flex-start;
     gap: 10px;
     justify-content: center;
 }
- 
 
 
-.add-input{
+
+.add-input {
 
     height: 50px;
     width: 50%;
@@ -191,10 +244,11 @@ margin-bottom: 10px;}
     border: 5px solid black;
     padding: 10px;
     font-size: 16px;
-    
+
 }
-@media (max-width:768px){
-    .add-input{
+
+@media (max-width:768px) {
+    .add-input {
         width: 100%;
         font-size: 12px;
     }
@@ -202,7 +256,7 @@ margin-bottom: 10px;}
 
 
 
-.addBtn{
+.addBtn {
     height: 70px;
     width: 100px;
     background-color: rgb(0, 0, 0);

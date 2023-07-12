@@ -4,20 +4,28 @@ class Storage{
 
     }
 
-saveData(data){
+static saveData(data){
 
     const dataString = JSON.stringify(data)
-    localStorage.setItem('todos', dataString)
+    localStorage.setItem('todoArray', dataString)
 }
 
 
-loadData(){
+static loadTodos(){
 
-    const dataString = localStorage.getItem('todos')     
+    const dataString = localStorage.getItem('todoArray')     
 
         if (dataString) {
             const data = JSON.parse(dataString);
-            return data
+
+
+            const tempArray = []
+            for (const object of data) {
+                const newTodo = new Todo(object.title,  new Date(object.creationDate),object.isCompleted)
+                tempArray.push(newTodo)
+                
+            }
+            return tempArray
             
         }
 
