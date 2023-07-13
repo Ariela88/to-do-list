@@ -7,7 +7,8 @@ body {
     background-color: rgb(255, 255, 255);
     background-image: url(./assets/checkpattern.jpg);
     background-repeat: repeat;
-
+    margin: 0px;
+height: 100vh;
 
 
 }
@@ -16,29 +17,52 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    
-}
-@media (max-width:768px){
+    justify-content: space-between;
+    height: calc(100% - 300px);
 
-    main{width: auto;
+}
+
+@media (max-width:768px) {
+
+    main {
+        width: auto;
+        height: calc(100% - 100px);
 
 
     }
 }
 
-.spacer{
-    flex-grow: 1;
-    
+.spacer {
+
+    flex: 1;
+
 }
 
+header{
+
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffee7da9;
+}
+
+@media (max-width:768px) {
+
+    header {
+        height: 150px;
+
+    }
+}
 
 h1 {
     text-align: center;
-background-color: #ffee7da9;
-    margin: auto;
+
+    
     font-size: 140px;
     font-family: 'Fasthand', cursive;
     text-shadow: -2px 0 #ffffff, 0 2px #ffffff, 2px 0 #ffffff, 0 -2px #ffffff;
+    margin: 0px;
 }
 
 @media (max-width:768px) {
@@ -61,9 +85,10 @@ h2 {
 
 @media (max-width:768px) {
     h2 {
-        font-size: 32px;
-        margin: 0px;
-        text-shadow: none;
+        font-size: 38px;
+        padding-top: 30px;
+        text-shadow: -2px 0 #070707, 0 2px #000000, 2px 0 #000000, 0 -2px #000000;
+        color: #ffffff;
     }
 }
 
@@ -85,6 +110,9 @@ h2 {
 @media (max-width:768px) {
     .sort-container {
         gap: 10px;
+        margin: 0;
+        padding: 0;
+        align-self: center;
     }
 }
 
@@ -128,7 +156,7 @@ h2 {
         font-size: 20px;
         gap: 0;
         width: auto;
-      
+
 
         /* padding: 30px;
         margin-bottom: 10px; */
@@ -158,7 +186,7 @@ h2 {
 
         width: 70px;
         margin: 10px;
-        font-size:x-small;
+        font-size: x-small;
     }
 }
 
@@ -168,13 +196,13 @@ h2 {
 
 }
 
-@media (max-width:768px){
+@media (max-width:768px) {
     .todo-card strong {
         order: 2;
         color: rgb(0, 0, 0);
         margin: 0px;
         text-align: left;
-    
+
     }
 }
 
@@ -213,6 +241,7 @@ h2 {
     padding-left: 61px; */
     height: max-content;
     align-self: center;
+    font-weight: bold;
 
 
 
@@ -223,6 +252,7 @@ h2 {
         width: 80px;
         font-size: 16px;
         margin: 4px;
+        border: 2px solid black;
 
     }
 }
@@ -231,7 +261,7 @@ h2 {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 
@@ -239,8 +269,8 @@ h2 {
 .add-input {
 
     height: 50px;
-    width: 50%;
-    margin-left: 40px;
+    width: 100%;
+
     border: 5px solid black;
     padding: 10px;
     font-size: 16px;
@@ -257,9 +287,10 @@ h2 {
 
 
 .addBtn {
-    height: 70px;
+    height: 100%;
     width: 100px;
     background-color: rgb(0, 0, 0);
     color: white;
     font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
 }
