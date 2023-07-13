@@ -183,9 +183,9 @@ h2 {
 
 @media (max-width:768px) {
     .todo-card button {
-
+align-content: flex-start;
         width: 70px;
-        margin: 10px;
+       
         font-size: x-small;
     }
 }
