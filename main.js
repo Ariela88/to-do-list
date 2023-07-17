@@ -12,7 +12,11 @@
 
 // const storage = new Storage(todos)
 
-let manager = new Manager()
+let manager;
+DbService.getAllTodos().then(todos => {
+    manager = new Manager(todos);
+    render();
+})
 
 
 function render() {
@@ -76,9 +80,15 @@ function render() {
 
 
         deleteBtn.addEventListener("click", () => {
-            manager.deleteTodo(i);
-            Storage.saveData(manager.todoArray)
-            render();
+
+            DbService.deleteTodo(todo.id).then(() => {
+                manager.deleteTodo(i);
+
+                render();
+
+            })
+
+
         });
 
 
@@ -98,7 +108,7 @@ function render() {
     }
 }
 
-render()
+
 
 
 function addTodoWithTitle() {
@@ -111,7 +121,7 @@ function addTodoWithTitle() {
 
 
         manager.addTodoWithTitle(title)
-       
+
         input.value = ''
 
     }

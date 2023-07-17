@@ -1,17 +1,19 @@
 class Manager {
 
-    constructor(todoArray) {
-        if (!todoArray) {
-            const todoArray = Storage.loadTodos()
-            if (todoArray) {
-                this.todoArray = todoArray
+    constructor(todoArray = []) {
+        // if (!todoArray) {
+        //     // const todoArray = Storage.loadTodos()
+        //     // if (todoArray) {
+        //     //     this.todoArray = todoArray
 
-            } else {
-                this.todoArray = []
-            }
-        } else {
-            this.todoArray = todoArray
-        }
+        //     // } else {
+        //     //     this.todoArray = []
+        //     // }
+        //     DbService.getAllTodos().then(todos => this.todoArray = todos())
+        // } else {
+        //     this.todoArray = todoArray
+        // }
+        this.todoArray = todoArray
 
     }
 
@@ -55,8 +57,11 @@ class Manager {
 
     deleteTodo(index) {
 
+        
+        
         this.todoArray.splice(index, 1);
-        Storage.saveData(manager.todoArray)
+        
+        
 
     }
 

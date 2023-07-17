@@ -1,10 +1,11 @@
 class Todo {
-    constructor(title, creationDate = new Date(), isCompleted = false) {
+    constructor(title, creationDate = new Date(), isCompleted = false, id) {
 
 
         this.title = title;
         this.isCompleted = isCompleted;
         this.creationDate = creationDate;
+        this.id = id
 
     }
 
