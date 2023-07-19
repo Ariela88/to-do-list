@@ -17,7 +17,7 @@ class Manager {
 
     }
 
-    addToDo(todo) {
+    addTodo(todo) {
 
         this.todoArray.push(todo)
 

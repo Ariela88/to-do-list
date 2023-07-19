@@ -45,17 +45,26 @@ function render() {
         titleStrong.appendChild(titleNode)
         div.appendChild(titleStrong)
 
+
+
         const completeBtn = document.createElement('button');
 
         const completeNode = document.createTextNode(todo.isCompleted ? '✘' : '✔')
 
         completeBtn.addEventListener('click', () => {
-            manager.changeCompleteStatus(i)
-            render()
 
-        }
+            const modifiedTodo = { ...todo };
 
-        )
+            modifiedTodo.isCompleted = !modifiedTodo.isCompleted;
+
+            DbService.updateTodo(modifiedTodo).then(res => {
+                manager.changeCompleteStatus(i);
+                render()
+            })
+
+        })
+
+
 
 
 
@@ -119,14 +128,23 @@ function addTodoWithTitle() {
 
     if (title.trim() !== '') {
 
+        const newTodo = new Todo(title,new Date(),false)
 
-        manager.addTodoWithTitle(title)
+        DbService.saveTodo(newTodo).then(res => {
+            manager.addTodo(res);
+            input.value = '';
 
-        input.value = ''
+            render()
+        })
+
+
+        // manager.addTodoWithTitle(title)
+
+        // input.value = ''
 
     }
 
-    render()
+    // render()
 
 
 }

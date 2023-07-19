@@ -182,6 +182,8 @@ h2 {
     align-items: flex-start;
     gap: 10px;
     justify-content: space-between;
+    position: sticky;
+    bottom: 0;
    
 }
 
